@@ -1,0 +1,36 @@
+{
+  "name": "rename_pro_bot",
+  "description": "Telegram's best Open Source ALL-In-One Multi Purpose RoBot. Create your Fork now.",
+  "logo": "https://static10.tgstat.ru/channels/_0/96/96faf804011bb615badb93e6921c65e0.jpg",
+  "keywords": ["telegram", "best", "open", "source", "file", "formatter", "chat", "uploader"],
+  "website": "https://github.com/m4mallu/renameprobot",
+  "repository": "https://github.com/m4mallu/renameprobot",
+  "env": {
+        "APP_ID": {"description": "Get this value from https://my.telegram.org", "required": true},
+        "API_HASH": {"description": "Get this value from https://my.telegram.org" , "required": true},
+        "TG_BOT_TOKEN": {"description": "Get Bot Token From BotFather Bot","required": true},
+        "AUTH_USERS": {"description": "List of userIDs separated by <space>","required": true},
+        "CHANNEL1_ID": {"description": "Give a channel id to send media prefix: -100","required": true},
+        "CHANNEL1_NAME": {"description": "Give a name to Channel 1","required": true},
+        "CHANNEL2_ID": {"description": "(optional) Give a channel id to send media prefix: -100","required": false},
+        "CHANNEL2_NAME": {"description": "(optional) Give a name to Channel 2","required": false},
+        "CHANNEL3_ID": {"description": "(optional) Give a channel id to send media prefix: -100","required": false},
+        "CHANNEL3_NAME": {"description": "(optional) Give a name to Channel 3","required": false},
+        "CHANNEL4_ID": {"description": "(optional) Give a channel id to send media prefix: -100","required": false},
+        "CHANNEL4_NAME": {"description": "(optional) Give a name to Channel 4","required": false},
+        "CHANNEL5_ID": {"description": "(optional) Give a channel id to send media prefix: -100","required": false},
+        "CHANNEL5_NAME": {"description": "(optional) Give a name to Channel 5","required": false},
+        "ENV": {"description": "Set this to ANYTHING","value": "ANYTHING"}
+  },
+  "addons": [
+  ],
+  "buildpacks": [
+    {"url": "heroku/python"}
+  ],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}

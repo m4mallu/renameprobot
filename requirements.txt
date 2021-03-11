@@ -1,0 +1,7 @@
+#-------------------------------------- https://github.com/m4mallu/renameprobot --------------------------------------#
+
+aiohttp
+hachoir
+Pillow
+TgCrypto
+Pyrogram==1.1.9
