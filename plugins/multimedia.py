@@ -65,7 +65,7 @@ async def rename_file(bot, update):
             os.remove(os.path.join(download_location, f))
         except IndexError:
             pass
-    saved_file_path = download_location + "/" + input_file_name[id]
+    saved_file_path = download_location + "/" + input_file_name[id].replace("_", " ")
     a = await bot.send_message(chat_id=update.message.chat.id, text=Translation.DOWNLOAD_START)
     c_time = time.time()
     try:
@@ -138,7 +138,7 @@ async def convert_to_video(bot, update):
             os.remove(os.path.join(download_location, f))
         except IndexError:
             pass
-    saved_file_path = download_location + "/" + input_file_name[id]
+    saved_file_path = download_location + "/" + input_file_name[id].replace("_", " ")
     a = await bot.send_message(
         chat_id=update.message.chat.id,
         text=Translation.DOWNLOAD_START,
