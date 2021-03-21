@@ -204,7 +204,7 @@ async def forward(bot, update):
                                        message_id=update.reply_to_message.message_id)
                 a = await update.reply_text(text=Translation.SUCCESSFUL_SEND.format(channel_name[id]),
                                             parse_mode='html', quote=True)
-                time.sleep(5)
+                time.sleep(2)
                 await a.delete()
             except Exception:
                 await bot.delete_messages(chat_id=update.chat.id, message_ids=update.message_id)

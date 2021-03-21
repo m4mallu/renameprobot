@@ -66,6 +66,7 @@ async def rename_file(bot, update):
         except IndexError:
             pass
     saved_file_path = download_location + "/" + input_file_name[id].replace("_", " ")
+    print( saved_file_path )
     a = await bot.send_message(chat_id=update.message.chat.id, text=Translation.DOWNLOAD_START)
     c_time = time.time()
     try:
@@ -115,7 +116,7 @@ async def rename_file(bot, update):
             text=Translation.MAKE_A_COPY_TEXT,
             reply_markup=InlineKeyboardMarkup(
                 [
-                    [InlineKeyboardButton("📘 Document", callback_data="d_copy"),
+                    [InlineKeyboardButton("📘 Doc", callback_data="d_copy"),
                      InlineKeyboardButton("🎞 Video", callback_data="v_copy")],
                     [InlineKeyboardButton(" Close", callback_data="clear_med")]
                 ])

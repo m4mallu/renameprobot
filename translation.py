@@ -27,7 +27,7 @@ class Translation( object ):
                   "check the supported extensions in welcome message !</code> "
     EXTENSIONS = ['.mkv', '.mp4', '.avi', '.webm']
     NO_SPAM_MSG = "⚠️ <b>Don't Spam Here</b>\n<code>Read the welcome message for better use of this bot !</code>"
-    MAKE_A_COPY_TEXT = "📚 <code>Need a copy finally ?</code>"
+    MAKE_A_COPY_TEXT = "📚 <code>Need a copy ?</code>"
     FINISHED_PROGRESS_STR = "◼️"
     UN_FINISHED_PROGRESS_STR = "◻️"
     CUSTOM_CAPTION_DOC = "💢<a href='https://t.me/Moviekeralam'>@MovieKeralam</a>💢\n" \
