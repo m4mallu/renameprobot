@@ -52,7 +52,7 @@ async def download_media(bot, update):
 #-------------------------------------- Renaming with Updated Text as Document ---------------------------------------#
 async def rename_file(bot, update):
     await bot.delete_messages(chat_id=update.message.chat.id, message_ids=message1[id])
-    description = Translation.CUSTOM_CAPTION_DOC
+    description = input_file_name[id].rsplit('.', 1)[0].upper()
     thumb_image_path = os.getcwd() + "/" + "thumbnails" + "/" + str(update.from_user.id) + ".jpg"
     if not os.path.exists(thumb_image_path):
         thumb_image_path = None
@@ -66,7 +66,6 @@ async def rename_file(bot, update):
         except IndexError:
             pass
     saved_file_path = download_location + "/" + input_file_name[id].replace("_", " ")
-    print( saved_file_path )
     a = await bot.send_message(chat_id=update.message.chat.id, text=Translation.DOWNLOAD_START)
     c_time = time.time()
     try:
@@ -100,7 +99,7 @@ async def rename_file(bot, update):
                 chat_id=update.message.chat.id,
                 document=saved_file_path,
                 thumb=thumb_image_path,
-                caption=description,
+                caption=Translation.CAPTION_TEXT.format(description),
                 progress=progress_for_pyrogram,
                 progress_args=(
                     Translation.UPLOAD_START,
@@ -129,7 +128,7 @@ async def convert_to_video(bot, update):
     thumb_image_path = os.getcwd() + "/" + "thumbnails" + "/" + str(update.from_user.id) + ".jpg"
     if not os.path.exists(thumb_image_path):
         thumb_image_path = None
-    description = Translation.CUSTOM_CAPTION_VIDEO
+    description = input_file_name[id].rsplit('.', 1)[0].upper()
     download_location = os.path.join(os.getcwd(), "downloads", str(update.message.chat.id))
     if not os.path.isdir(download_location):
         os.makedirs(download_location)
@@ -179,7 +178,7 @@ async def convert_to_video(bot, update):
                     chat_id=update.message.chat.id,
                     video=saved_file_path,
                     duration=duration,
-                    caption=description,
+                    caption=Translation.CAPTION_TEXT.format(description),
                     thumb=thumb_image_path,
                     supports_streaming=True,
                     progress=progress_for_pyrogram,

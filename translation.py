@@ -30,10 +30,7 @@ class Translation( object ):
     MAKE_A_COPY_TEXT = "📚 <code>Need a copy ?</code>"
     FINISHED_PROGRESS_STR = "◼️"
     UN_FINISHED_PROGRESS_STR = "◻️"
-    CUSTOM_CAPTION_DOC = "💢<a href='https://t.me/Moviekeralam'>@MovieKeralam</a>💢\n" \
-                         "💢<a href='https://t.me/MoviekeralamLinks'>@MovieKeralamLinks</a>💢"
-    CUSTOM_CAPTION_VIDEO = "💢<a href='https://t.me/Moviekeralam'>@MovieKeralam</a>💢\n" \
-                           "💢<a href='https://t.me/MoviekeralamLinks'>@MovieKeralamLinks</a>💢"
+    CAPTION_TEXT = "<b>{}</b>"
     SUCCESSFUL_SEND = "<code>Forwarded Successfully to:</code>\n<b>{}</b>"
     FORWARD_ERROR = "<b>⚠️ Attention :</b>\n<code>Make Sure That I am Admin in Your Channel or Provided Channel " \
                     "ID is Correct.</code>"

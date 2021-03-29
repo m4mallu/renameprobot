@@ -10,6 +10,7 @@ from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from translation import Translation
 from helper.display_progress import progress_for_pyrogram
+from int import input_file_name
 
 logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger(__name__)
@@ -19,7 +20,7 @@ async def convert_to_doc_copy(bot, update):
     await bot.delete_messages(chat_id=update.message.chat.id, message_ids=update.message.message_id)
     saved_file_path = os.getcwd() + "/" + "downloads" + "/" + str(update.from_user.id) + "/"
     thumb_image_path = os.getcwd() + "/" + "thumbnails" + "/" + str(update.from_user.id) + ".jpg"
-    description = Translation.CUSTOM_CAPTION_DOC
+    description = input_file_name[id].rsplit('.', 1)[0].upper()
     if not os.path.exists(thumb_image_path):
         thumb_image_path = None
     for file in os.listdir(saved_file_path):
@@ -36,7 +37,7 @@ async def convert_to_doc_copy(bot, update):
                     chat_id=update.message.chat.id,
                     document=dir_content,
                     thumb=thumb_image_path,
-                    caption=description,
+                    caption=Translation.CAPTION_TEXT.format(description),
                     progress=progress_for_pyrogram,
                     progress_args=(
                         Translation.UPLOAD_START,
@@ -57,7 +58,7 @@ async def convert_to_video_copy(bot, update):
     await bot.delete_messages(chat_id=update.message.chat.id, message_ids=update.message.message_id)
     saved_file_path = os.getcwd() + "/" + "downloads" + "/" + str(update.from_user.id) + "/"
     thumb_image_path = os.getcwd() + "/" + "thumbnails" + "/" + str(update.from_user.id) + ".jpg"
-    description = Translation.CUSTOM_CAPTION_VIDEO
+    description = input_file_name[id].rsplit('.', 1)[0].upper()
     if not os.path.exists(thumb_image_path):
         thumb_image_path = None
     for file in os.listdir(saved_file_path):
@@ -77,7 +78,7 @@ async def convert_to_video_copy(bot, update):
                         chat_id=update.message.chat.id,
                         video=dir_content,
                         duration=duration,
-                        caption=description,
+                        caption=Translation.CAPTION_TEXT.format(description),
                         thumb=thumb_image_path,
                         supports_streaming=True,
                         progress=progress_for_pyrogram,
