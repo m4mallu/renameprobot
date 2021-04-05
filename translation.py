@@ -9,7 +9,9 @@ class Translation( object ):
                               "rename or video conversions</code> "
     SAVED_RECVD_DOC_FILE = "<b>✔️ Media Downloaded Successfully</b>"
     ACCESS_DENIED_TEXT = "You are not authorized to use this Bot."
-    START_TEXT = "Hello.. <b>{}</b>\n\n<b>Myself:</b> {}\n\n<b>I can do a lot of things in your Chats</b> 😀\n\n" \
+    START_TEXT = "Hello.. <b>{}</b>\n\n<b>Myself:</b> {}\n\n<b>I can do a lot of things with your files</b>\n\n" \
+                 "<i>Send filename + extension (Eg: terminator.mkv) as a reply to any telegram media, and follow " \
+                 "Bot's instructions.</i>\n\n" \
                  "<b>My Author is: </b><a href='https://t.me/space4renjith'>                HERE</a>\n" \
                  "<b>My code can be seen: </b><a href='https://github.com/m4mallu/renameprobot'> HERE</a>\n\n" \
                  "<i> Have a nice day</i> 😍"

@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(name)s - %(leve
 logger = logging.getLogger(__name__)
 logging.getLogger("pyrogram").setLevel(logging.WARNING)
 
-@Client.on_message(filters.private & filters.command(["start"]), group=0)
+@Client.on_message(filters.private & filters.command(['start', 'help']), group=0)
 async def start(bot, update):
     me = await bot.get_me()
     await bot.send_message(
